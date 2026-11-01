@@ -22,10 +22,13 @@ export function MainLayout() {
   const checkHealth = useCallback(async () => {
     try {
       const res = await healthService.checkHealth();
+      const status = res?.status || res?.data?.status;
+      const database = res?.database?.database || res?.data?.database?.database;
+      const version = res?.version || res?.data?.version;
       setSystemStatus({
-        connected: res.data?.status === 'UP',
-        database: res.data?.database?.database,
-        version: res.data?.version,
+        connected: status === 'UP',
+        database,
+        version,
         loading: false,
       });
     } catch {
