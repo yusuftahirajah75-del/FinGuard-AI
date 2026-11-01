@@ -212,3 +212,4 @@ export class AlertRepository {
 }
 
 export default new AlertRepository();
+

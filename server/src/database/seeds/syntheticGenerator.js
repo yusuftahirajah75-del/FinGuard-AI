@@ -282,3 +282,4 @@ export function generateSyntheticTransactions(options = {}) {
 }
 
 export default generateSyntheticTransactions;
+

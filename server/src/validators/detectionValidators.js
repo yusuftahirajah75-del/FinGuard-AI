@@ -44,3 +44,4 @@ export const updateSettingsSchema = z.object({
   }).optional(),
   description: z.string().max(255).optional(),
 });
+

@@ -5,3 +5,4 @@ const router = Router();
 router.get('/summary', dashboardController.getDashboardSummary);
 
 export default router;
+

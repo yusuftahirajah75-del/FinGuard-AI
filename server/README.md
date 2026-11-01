@@ -10,3 +10,4 @@ Please refer to the primary project documentation:
 - `npm run migrate`: Execute PostgreSQL schema migrations
 - `npm run seed`: Populate database with synthetic transactions
 - `npm run reset-demo`: Wipe and re-seed the demo database with safeguards
+

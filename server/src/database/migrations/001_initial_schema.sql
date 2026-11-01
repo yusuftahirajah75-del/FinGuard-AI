@@ -169,3 +169,4 @@ VALUES (
     }'::jsonb,
     'Default Statistical Detection Engine Configuration (v1.0.0)'
 ) ON CONFLICT (id) DO NOTHING;
+

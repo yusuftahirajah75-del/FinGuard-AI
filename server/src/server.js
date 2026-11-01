@@ -58,3 +58,4 @@ startServer().catch((err) => {
   logger.error('Fatal initialization error:', { error: err.message, stack: err.stack });
   process.exit(1);
 });
+

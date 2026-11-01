@@ -289,3 +289,4 @@ export class DetectionService {
 }
 
 export default new DetectionService();
+

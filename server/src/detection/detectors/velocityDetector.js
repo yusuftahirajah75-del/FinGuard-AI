@@ -93,3 +93,4 @@ export class VelocityDetector {
 }
 
 export default VelocityDetector;
+

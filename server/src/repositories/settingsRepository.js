@@ -49,3 +49,4 @@ export class SettingsRepository {
 }
 
 export default new SettingsRepository();
+
