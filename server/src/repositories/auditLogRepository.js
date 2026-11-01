@@ -42,3 +42,4 @@ export class AuditLogRepository {
 }
 
 export default new AuditLogRepository();
+

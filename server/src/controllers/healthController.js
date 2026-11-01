@@ -30,3 +30,4 @@ export async function getHealth(req, res, next) {
 }
 
 export default { getHealth };
+

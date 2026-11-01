@@ -47,3 +47,4 @@ export default {
   getAlertById,
   updateAlert,
 };
+

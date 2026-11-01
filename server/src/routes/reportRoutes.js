@@ -8,3 +8,4 @@ router.get('/confusion-matrix', reportController.getConfusionMatrix);
 router.get('/export', reportController.exportReport);
 
 export default router;
+

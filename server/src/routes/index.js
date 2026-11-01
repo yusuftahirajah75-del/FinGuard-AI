@@ -16,3 +16,4 @@ router.use('/alerts', alertRoutes);
 router.use('/reports', reportRoutes);
 
 export default router;
+

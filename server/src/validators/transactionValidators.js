@@ -29,3 +29,4 @@ export const listTransactionsQuerySchema = z.object({
   sortBy: z.enum(['timestamp', 'transaction_timestamp', 'amount', 'reference', 'customer', 'score', 'anomaly_score']).default('timestamp'),
   sortOrder: z.enum(['asc', 'desc', 'ASC', 'DESC']).default('DESC'),
 });
+

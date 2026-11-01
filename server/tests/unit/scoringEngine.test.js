@@ -76,3 +76,4 @@ describe('ScoringEngine & Risk Classification', () => {
     expect(result.isAlertTriggered).toBe(true);
   });
 });
+

@@ -19,3 +19,4 @@ export const listAlertsQuerySchema = z.object({
   sortBy: z.enum(['created_at', 'updated_at', 'severity', 'status', 'score', 'amount']).default('created_at'),
   sortOrder: z.enum(['asc', 'desc', 'ASC', 'DESC']).default('DESC'),
 });
+

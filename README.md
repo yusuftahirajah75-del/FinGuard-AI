@@ -1,8 +1,10 @@
 # Financial Transaction Anomaly Detection System (FTADS)
 
 [![Node.js Version](https://img.shields.io/badge/node-%3E%3D20.0.0-brightgreen.svg)](https://nodejs.org/)
+[![React Version](https://img.shields.io/badge/react-v18.3.1-blue.svg)](https://react.dev/)
+[![Vite](https://img.shields.io/badge/vite-v6.0-purple.svg)](https://vitejs.dev/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Tests Passing](https://img.shields.io/badge/tests-54%2F54%20passing-success.svg)]()
+[![Tests Passing](https://img.shields.io/badge/tests-75%2F75%20passing-success.svg)]()
 [![Code Architecture](https://img.shields.io/badge/architecture-Clean%20%2F%20Layered-orange.svg)]()
 
 > **An academic, explainable, multi-signal statistical anomaly detection backend and RESTful API for identifying suspicious financial transactions.**
@@ -449,10 +451,8 @@ npm run test:unit
 npm run test:integration
 ```
 
-### Genuine Test Results (100% Pass Rate)
-- **Total Test Suites**: 9 passed, 9 total
-- **Total Automated Tests**: 54 passed, 54 total
-- **Test Categories**:
+### Genuine Test Results (100% Pass Rate: 75/75 Tests)
+- **Backend Test Suites**: 9 passed, 9 total (54 automated tests)
   - `mathUtils.test.js` (Median, MAD, MeanAD fallback, Modified Z-score, bounds checks)
   - `detectors.test.js` (Amount anomaly, Zero MAD fallback, Velocity burst, Unusual time, Duplicate transfer, New counterparty, Anti-leakage verification, Self-exclusion verification)
   - `scoringEngine.test.js` (Weighted calculation, Missing-signal re-normalization, Risk classification tiers, Alert trigger rules)
@@ -462,6 +462,12 @@ npm run test:integration
   - `api.detection.test.js` (Single analysis, Batch detection, Duplicate alert prevention, Methodology, Settings updates)
   - `api.alerts.test.js` (Triage lifecycles, Analyst assignment, Audit trail logging)
   - `api.reports.test.js` (Executive KPIs, Confusion matrix, Academic metrics, CSV downloads)
+- **Frontend Test Suites**: 5 passed, 5 total (21 automated tests)
+  - `formatters.test.js` (Currency, date, percent, and risk badge formatting utilities)
+  - `components.test.jsx` (RiskBadge, StatusBadge, KpiCard, LoadingSkeleton, EmptyState, ErrorBanner rendering)
+  - `navigation.test.jsx` (Sidebar routing, active link states, header live health beacon, analyst status)
+  - `dashboard.test.jsx` (Live KPI cards, recent anomalies rendering, active alerts table)
+  - `investigation.test.jsx` (Transaction telemetry, 5-signal detector breakdowns, interactive Analyze button trigger)
 
 ---
 
@@ -473,15 +479,35 @@ npm run test:integration
 
 ---
 
-## 16. Frontend Integration Instructions
+## 16. Financial Analyst Frontend Dashboard (`client/`)
 
-A dedicated frontend integration guide is available at [FRONTEND_INTEGRATION.md](file:///c:/Users/Web%20developer/Desktop/FinGuard%20AI/FRONTEND_INTEGRATION.md).
+The FTADS Analyst Dashboard is a responsive Single-Page Application (SPA) built using **React 18**, **Vite 6**, **Tailwind CSS 3.4**, **React Router v6**, **Recharts**, **Lucide React**, **React Hook Form**, and **Zod**.
 
-It specifies:
-- Complete JSON schemas and response envelopes.
-- Filter and sorting query parameters for all transaction and alert tables.
-- Sample React / TypeScript integration hooks (`useTransactions`, `useAlerts`, `useAnalyzeTransaction`, `useConfusionMatrix`).
-- CSV export integration examples.
+### Core Analyst Capabilities:
+1. **Executive Overview Dashboard**: High-level KPIs (Total Volume, Analyzed Ratio, Open Alerts, High/Critical Risks), Recharts risk distribution donut, 24-hour channel volume bar chart, live anomalous stream, and high-priority alert cards.
+2. **Transaction Explorer & Creator**: Multi-facet search by reference and customer, channel/status/risk filters, date and amount range sliders, CSV export, and modal form for ingesting new transactions with instant client and backend Zod validation.
+3. **Transaction Investigation Station**: Deep forensic telemetry, prominent circular risk score gauge, granular 5-signal breakdown cards with parameter chips and status badges, natural language narrative explanation, linked alert banner, and on-demand **"Analyze Transaction"** button triggering live backend scoring.
+4. **Case & Alert Management**: Status tabs (`OPEN`, `UNDER_REVIEW`, `RESOLVED`, `FALSE_POSITIVE`), severity filter, slide-over detail drawer, status lifecycle transition buttons, assigned analyst input, investigation notes autosave, and complete immutable **Audit Trail** timeline rendering past decisions.
+5. **Academic Detection Analytics**: Interactive Confusion Matrix grid ($TP, FP, TN, FN$), academic metrics (Precision/PPV, Recall/TPR, F1-Score, Accuracy, Specificity), interactive threshold-tuning slider showing metric fluctuations, risk band distributions, and CSV download links.
+6. **Detection Methodology & Runtime Calibration**: Full academic mathematical formulas for all 5 detectors, dynamic weights recalculation demonstration, and an interactive **Settings Editor** that allows authorized analysts to calibrate detector weights and alert trigger thresholds directly in PostgreSQL (`PATCH /api/detection/settings`).
+
+### Running the Full Stack Application:
+
+```powershell
+# Option A: Run Backend and Frontend in Separate Terminals
+
+# Terminal 1 (Backend API - http://localhost:5000):
+npm run server:dev
+
+# Terminal 2 (Analyst Dashboard - http://localhost:5173):
+npm run client:dev
+
+# Option B: Run Full Automated Test Suite (75 Tests):
+npm test
+
+# Option C: Build Frontend for Production:
+npm run build
+```
 
 ---
 
@@ -496,17 +522,18 @@ git status
 # 2. Check current commits
 git log --oneline -n 5
 
-# 3. Stage backend implementation files
-git add .
+# 3. Stage frontend and documentation files
+git add client/ package.json README.md
 
-# 4. Commit completed backend milestone
-git commit -m "feat(backend): complete FTADS backend API, statistical anomaly detection engine, migrations, and test suite"
+# 4. Commit completed frontend milestone
+git commit -m "feat(frontend): complete FTADS financial security analyst dashboard, tests, and documentation"
 
 # 5. Push feature branch to GitHub remote (replace origin if needed)
-git push -u origin feature/ftads-backend
+git push -u origin feature/ftads-frontend
 
 # 6. Merge feature branch into main safely
 git checkout main
-git merge --no-ff feature/ftads-backend -m "merge: incorporate complete FTADS backend into main"
+git merge --no-ff feature/ftads-frontend -m "merge: incorporate complete FTADS financial security analyst dashboard into main"
 git push origin main
 ```
+

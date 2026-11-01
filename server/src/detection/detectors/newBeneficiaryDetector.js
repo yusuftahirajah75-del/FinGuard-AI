@@ -80,3 +80,4 @@ export class NewBeneficiaryDetector {
 }
 
 export default NewBeneficiaryDetector;
+

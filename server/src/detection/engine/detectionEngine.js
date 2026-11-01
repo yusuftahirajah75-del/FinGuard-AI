@@ -87,3 +87,4 @@ export class DetectionEngine {
 }
 
 export default DetectionEngine;
+

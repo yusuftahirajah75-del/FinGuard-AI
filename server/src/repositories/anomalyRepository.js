@@ -99,3 +99,4 @@ export class AnomalyRepository {
 }
 
 export default new AnomalyRepository();
+

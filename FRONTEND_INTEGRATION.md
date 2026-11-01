@@ -378,3 +378,4 @@ Evaluates system precision, recall, specificity, F1-score, and accuracy against 
 `GET /api/reports/export?type=alerts&limit=1000`
 
 Direct browser download stream (`Content-Type: text/csv`). Implements automated formula injection protection.
+

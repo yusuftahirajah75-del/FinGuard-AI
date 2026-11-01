@@ -91,3 +91,4 @@ export class AmountDetector {
 }
 
 export default AmountDetector;
+
