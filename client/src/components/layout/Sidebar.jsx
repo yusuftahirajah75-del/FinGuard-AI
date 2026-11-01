@@ -65,9 +65,8 @@ export function Sidebar({ isOpen, onClose }) {
 
       {/* Sidebar container */}
       <aside
-        className={`fixed inset-y-0 left-0 z-40 w-64 bg-slate-900 border-r border-slate-800 flex flex-col justify-between transition-transform duration-300 ease-in-out lg:translate-x-0 ${
-          isOpen ? 'translate-x-0' : '-translate-x-full'
-        }`}
+        className={`fixed inset-y-0 left-0 z-40 w-64 bg-slate-900 border-r border-slate-800 flex flex-col justify-between transition-transform duration-300 ease-in-out lg:translate-x-0 ${isOpen ? 'translate-x-0' : '-translate-x-full'
+          }`}
       >
         <div>
           {/* Brand header */}
@@ -106,10 +105,9 @@ export function Sidebar({ isOpen, onClose }) {
                     if (window.innerWidth < 1024) onClose();
                   }}
                   className={({ isActive }) =>
-                    `flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all ${
-                      isActive
-                        ? 'bg-brand-600 text-white shadow-sm shadow-brand-600/30'
-                        : 'text-slate-400 hover:text-slate-100 hover:bg-slate-800/60'
+                    `flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all ${isActive
+                      ? 'bg-brand-600 text-white shadow-sm shadow-brand-600/30'
+                      : 'text-slate-400 hover:text-slate-100 hover:bg-slate-800/60'
                     }`
                   }
                   end={item.path === '/'}
@@ -143,3 +141,4 @@ export function Sidebar({ isOpen, onClose }) {
 }
 
 export default Sidebar;
+

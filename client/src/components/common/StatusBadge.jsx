@@ -27,3 +27,4 @@ export function StatusBadge({ status, showDot = true, size = 'md', className = '
 }
 
 export default StatusBadge;
+

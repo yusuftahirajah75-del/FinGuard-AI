@@ -146,3 +146,4 @@ describe('Investigation Page Component', () => {
     });
   });
 });
+

@@ -47,3 +47,4 @@ export function LoadingSkeleton({ type = 'table', rows = 5, className = '' }) {
 }
 
 export default LoadingSkeleton;
+

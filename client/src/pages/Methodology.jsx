@@ -451,3 +451,4 @@ export function Methodology() {
 }
 
 export default Methodology;
+

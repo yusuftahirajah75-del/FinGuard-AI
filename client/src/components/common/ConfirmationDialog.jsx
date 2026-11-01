@@ -17,9 +17,8 @@ export function ConfirmationDialog({
     <Modal isOpen={isOpen} onClose={onClose} title={title} maxWidth="max-w-md">
       <div className="flex items-start gap-4 mb-6">
         <div
-          className={`p-3 rounded-full shrink-0 ${
-            isDestructive ? 'bg-rose-100 text-rose-600' : 'bg-amber-100 text-amber-600'
-          }`}
+          className={`p-3 rounded-full shrink-0 ${isDestructive ? 'bg-rose-100 text-rose-600' : 'bg-amber-100 text-amber-600'
+            }`}
         >
           <AlertTriangle className="w-6 h-6" />
         </div>
@@ -41,11 +40,10 @@ export function ConfirmationDialog({
           type="button"
           onClick={onConfirm}
           disabled={loading}
-          className={`px-4 py-2 text-xs font-semibold text-white rounded-lg transition-colors shadow-xs ${
-            isDestructive
+          className={`px-4 py-2 text-xs font-semibold text-white rounded-lg transition-colors shadow-xs ${isDestructive
               ? 'bg-rose-600 hover:bg-rose-700'
               : 'bg-brand-600 hover:bg-brand-700'
-          } ${loading ? 'opacity-70 cursor-not-allowed' : ''}`}
+            } ${loading ? 'opacity-70 cursor-not-allowed' : ''}`}
         >
           {loading ? 'Processing...' : confirmLabel}
         </button>
@@ -55,3 +53,4 @@ export function ConfirmationDialog({
 }
 
 export default ConfirmationDialog;
+

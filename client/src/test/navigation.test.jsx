@@ -47,3 +47,4 @@ describe('Navigation & Layout Shell', () => {
     expect(screen.getByText('Offline')).toBeInTheDocument();
   });
 });
+

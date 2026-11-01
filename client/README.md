@@ -203,3 +203,4 @@ The frontend expects the backend API at `VITE_API_BASE_URL` with standard respon
 
 1. **Academic Dataset Isolation**: Ground truth labels (`NORMAL` vs `SUSPICIOUS`) are generated exclusively for validation benchmarks and never influence the frontend scoring view.
 2. **Deterministic Rules Engine**: Anomaly scores are calculated strictly on the backend using non-parametric statistics (Median & MAD). The frontend never generates or calculates risk scores locally.
+

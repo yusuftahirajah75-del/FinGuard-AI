@@ -6,3 +6,4 @@ dist-ssr
 .env.production
 .DS_Store
 coverage
+

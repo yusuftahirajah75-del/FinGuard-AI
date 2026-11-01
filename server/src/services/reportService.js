@@ -27,7 +27,7 @@ export class ReportService {
       transactions: {
         total: totalTransactions,
         analyzed: parseInt(anomalyStats.total_analyzed, 10),
-        unanalyzed: totalTransactions - parseInt(anomalyStats.total_analyzed, 10),
+        unanalyzed: Math.max(0, totalTransactions - parseInt(anomalyStats.total_analyzed, 10)),
         channelDistribution: channelRes.rows,
       },
       detection: {

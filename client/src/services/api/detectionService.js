@@ -51,3 +51,4 @@ export const detectionService = {
 };
 
 export default detectionService;
+

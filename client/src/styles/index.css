@@ -26,3 +26,4 @@
 .table-row-hover {
   @apply transition-colors duration-150 hover:bg-slate-50/80;
 }
+

@@ -88,7 +88,7 @@ export class AnomalyRepository {
   async getSummaryStats() {
     const sql = `
       SELECT 
-        COUNT(*) as total_analyzed,
+        COUNT(DISTINCT transaction_id) as total_analyzed,
         COALESCE(AVG(anomaly_score), 0)::numeric(5,2) as average_score,
         COUNT(CASE WHEN risk_level IN ('HIGH', 'CRITICAL') THEN 1 END) as high_risk_count
       FROM anomaly_results

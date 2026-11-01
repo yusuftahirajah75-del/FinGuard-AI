@@ -28,3 +28,4 @@ export function RiskBadge({ level, showDot = true, size = 'md', className = '' }
 }
 
 export default RiskBadge;
+
